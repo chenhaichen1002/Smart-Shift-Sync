@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -19,10 +19,18 @@
         }
         main {
             padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
             background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1, h2 {
             color: #333;
+            border-left: 5px solid #0073e6;
+            padding-left: 10px;
+        }
+        section {
+            margin-bottom: 30px;
         }
         footer {
             text-align: center;
@@ -33,10 +41,39 @@
             bottom: 0;
             width: 100%;
         }
+        nav {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
         nav a {
-            margin: 15px;
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 10px;
             color: #0073e6;
             text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .app-list {
+            list-style: none;
+            padding: 0;
+        }
+        .app-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .status-badge {
+            font-size: 0.8em;
+            background: #e67e22;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -49,20 +86,49 @@
             <h2>アプリの概要</h2>
             <p>特定のワークポータルから取得した勤務スケジュールを解析し、Googleカレンダーへ自動的に同期するための個人向け支援ツールです。</p>
         </section>
+
+        <section>
+            <h2>プロダクトラインナップ</h2>
+            <ul class="app-list">
+                <li>
+                    <strong>Smart-Shift-Sync_GUI (Windows版)</strong><br>
+                    デスクトップで動作するGUIアプリケーションです。<br>
+                    <a href="https://github.com/chenhaichen1002/Smart-Shift-Sync_GUI" target="_blank">GitHubリポジトリを見る</a>
+                </li>
+                <li>
+                    <strong>Shift Sync Online (Web版)</strong><br>
+                    Smart-Shift-Sync_GUIのオンライン版です。ブラウザから直接利用可能です。<br>
+                    <a href="https://smart-shift-syncweb-mmahtfwspadpxywkmsxetf.streamlit.app/" target="_blank">アプリを開く</a>
+                </li>
+            </ul>
+        </section>
+
         <section>
             <h2>主な機能</h2>
             <ul>
                 <li>カレンダー同期: 勤務日時や担当業務をGoogleカレンダーに一括登録。</li>
                 <li>給与シミュレーション: 深夜手当や残業時間、休日割増を考慮した概算計算。</li>
-                <li>オフライン書き出し: csv でのファイル出力に対応。</li>
+                <li>オフライン書き出し: CSVでのファイル出力に対応。</li>
             </ul>
         </section>
+
+        <section>
+            <h2>開発ロードマップ</h2>
+            <ul class="app-list">
+                <li>
+                    <strong>Smart-Shift-change</strong> <span class="status-badge">開発検討中</span><br>
+                    シフト変更時の連絡ミスを防止し、スタッフ間でお互いに確認しやすくするための機能を予定しています。
+                </li>
+            </ul>
+        </section>
+
         <section>
             <h2>お問い合わせ</h2>
             <p>開発者：Chen<br>メール：<a href="mailto:admin@gojapancn.com">admin@gojapancn.com</a></p>
         </section>
+
         <nav>
-            <h2>関連リンク</h2>
+            <h2>規約・ポリシー</h2>
             <a href="privacy.html">プライバシーポリシー</a>
             <a href="terms.html">利用規約</a>
         </nav>
