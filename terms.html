@@ -1,64 +1,111 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>利用規約</title>
+    <title>利用規約 | Smart Shift Sync</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        body { 
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f9f9f9; 
         }
-        header {
-            background: #0073e6;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
+        .container { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 40px; 
+            background: white; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
         }
-        main {
-            padding: 20px;
-            background: white;
+        header { 
+            border-bottom: 2px solid #0073e6; 
+            margin-bottom: 30px; 
+            padding-bottom: 10px; 
         }
-        h1, h2 {
+        h1 { font-size: 24px; color: #0073e6; }
+        h2 { 
+            font-size: 18px; 
+            border-left: 4px solid #0073e6; 
+            padding-left: 10px; 
+            margin-top: 30px; 
             color: #333;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0073e6;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        p, li { font-size: 15px; }
+        section { margin-bottom: 20px; }
+        
+        .highlight-notice {
+            background-color: #fff9c4;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
         }
+
+        footer { 
+            text-align: center; 
+            margin-top: 40px; 
+            font-size: 12px; 
+            color: #777; 
+            padding-bottom: 40px; 
+        }
+        .back-link {
+            margin-top: 30px;
+            display: block;
+            text-align: center;
+            color: #0073e6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>利用規約</h1>
-    </header>
-    <main>
-        <section>
-            <h2>第1条（規約の適用）</h2>
-            <p>本規約は、開発者「Chen」が提供する「Smart Shift Sync」の利用について定めるものです。</p>
-        </section>
-        <section>
-            <h2>第2条（免責事項）</h2>
-            <p>本アプリは個人の業務効率化を目的とした非公式ツールであり、特定の企業や組織との提携関係はありません。アプリによって算出される給与額やスケジュール内容はあくまで計算上の目安です。正確な情報は必ず公式の勤務明細と照合してください。</p>
-        </section>
-        <section>
-            <h2>第3条（禁止事項）</h2>
-            <p>本ツールのリバースエンジニアリング、および他者のアカウント情報を不正に使用して本ツールを利用する行為を禁じます。</p>
-        </section>
-        <section>
-            <h2>第4条（サービスの変更・終了）</h2>
-            <p>参照先の仕様変更やAPIの制限等により、事前の通知なくサービスの一部または全部を停止する場合があります。</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Smart Shift Sync - This project is open source and available under the MIT License.</p>
-    </footer>
+    <div class="container">
+        <header>
+            <h1>利用規約</h1>
+            <p>最終更新日: 2026年3月27日</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>第1条（規約の適用）</h2>
+                <p>本規約は、開発者「Chen」が提供する「Smart Shift Sync」（以下「本アプリ」）の利用条件を定めるものです。ユーザーは本アプリを利用することにより、本規約に同意したものとみなされます。</p>
+            </section>
+
+            <section>
+                <h2>第2条（免責事項）</h2>
+                <p>本アプリは個人の業務効率化を目的とした非公式ツールであり、特定の企業や組織との提携関係はありません。</p>
+                <div class="highlight-notice">
+                    本アプリによって算出される給与額やスケジュール内容は、あくまで計算上の目安です。法的・財務的な正確性を保証するものではありません。正確な情報は必ず公式の勤務明細と照合してください。
+                </div>
+                <p>本アプリの利用により生じた直接的または間接的な損害について、開発者は一切の責任を負わないものとします。</p>
+            </section>
+
+            <section>
+                <h2>第3条（禁止事項）</h2>
+                <p>ユーザーは、本アプリの利用にあたり、以下の行為を行ってはなりません：</p>
+                <ul>
+                    <li>本アプリのリバースエンジニアリング、逆コンパイル、または逆アセンブル。</li>
+                    <li>他者のアカウント情報（ID・パスワード等）を不正に使用して本アプリを利用する行為。</li>
+                    <li>本アプリの運営、または他のユーザーによる利用を妨害する行為。</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>第4条（サービスの変更・終了）</h2>
+                <p>参照先（ワークポータル等）の仕様変更、Google APIの制限、または開発者の判断により、事前の通知なく本アプリの一部または全部の提供を停止・変更する場合があります。</p>
+            </section>
+
+            <a href="index.html" class="back-link">← トップページへ戻る</a>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Smart Shift Sync - Licensed under the MIT License.</p>
+        </footer>
+    </div>
 </body>
 </html>
