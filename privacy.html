@@ -1,60 +1,72 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー</title>
+    <title>プライバシーポリシー | Smart Shift Sync</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #0073e6;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            background: white;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0073e6;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        .container { max-width: 800px; margin: 40px auto; padding: 40px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header { border-bottom: 2px solid #0073e6; margin-bottom: 30px; padding-bottom: 10px; }
+        h1 { font-size: 24px; color: #0073e6; }
+        h2 { font-size: 18px; border-left: 4px solid #0073e6; padding-left: 10px; margin-top: 30px; }
+        p, li { font-size: 15px; }
+        ul { padding-left: 20px; }
+        .highlight { background-color: #fff9c4; font-weight: bold; }
+        footer { text-align: center; margin-top: 40px; font-size: 12px; color: #777; padding-bottom: 40px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>プライバシーポリシー</h1>
-    </header>
-    <main>
-        <section>
-            <h2>1. 情報の収集と利用目的</h2>
-            <p>本アプリは、ユーザーが入力したポータルサイトの情報を解析し、Googleカレンダーへ予定を書き込む目的でのみデータを使用します。</p>
-        </section>
-        <section>
-            <h2>2. Google API データの取り扱い</h2>
-            <p>本アプリが要求するGoogle APIのスコープ（auth/calendar）は、スケジュール情報の書き込みおよび更新に限定して使用されます。取得したデータが外部のサーバーに保存されたり、開発者が閲覧することはありません。</p>
-        </section>
-        <section>
-            <h2>3. データの安全性</h2>
-            <p>ユーザーの認証情報（社員番号・パスワード等）は、通信の確立と解析のためにのみ使用され、アプリ終了後に保持されることはありません。Googleユーザーデータは、本アプリの機能提供以外の目的（広告、第三者提供など）で使用されることは一切ありません。</p>
-        </section>
-    </main>
+    <div class="container">
+        <header>
+            <h1>プライバシーポリシー</h1>
+            <p>最終更新日: 2026年3月27日</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>1. はじめに</h2>
+                <p>Smart Shift Sync（以下「本アプリ」）は、ユーザーのプライバシー保護を最優先事項としています。本ポリシーは、本アプリがGoogleユーザーデータをどのように取り扱うかを明確にするものです。</p>
+            </section>
+
+            <section>
+                <h2>2. Google APIデータの利用と限定的用途</h2>
+                <p>本アプリは、Google APIから取得した情報を以下の範囲内でのみ利用します：</p>
+                <ul>
+                    <li><strong>使用スコープ:</strong> <code>https://www.googleapis.com/auth/calendar.events</code></li>
+                    <li><strong>利用目的:</strong> ユーザーが入力したシフト情報を解析し、ユーザー自身のGoogleカレンダーへ予定を自動登録・更新・削除するため。</li>
+                </ul>
+                <p class="highlight">本アプリは、Google APIから取得したデータを、ユーザーに機能を提供する目的以外（広告配信、第三者への転売、ユーザーの特定など）には一切使用しません。</p>
+            </section>
+
+            <section>
+                <h2>3. データの保存とセキュリティ</h2>
+                <ul>
+                    <li><strong>非保持の原則:</strong> ユーザーのポータルサイトログイン情報（ID・パスワード）およびGoogle APIから取得したカレンダー情報は、本アプリの実行メモリ内でのみ処理され、外部サーバーに保存されることはありません。</li>
+                    <li><strong>転送の保護:</strong> すべてのデータ通信はHTTPS暗号化を用いて保護されます。</li>
+                    <li><strong>最小権限:</strong> 本アプリは、予定の書き込みに必要な最小限の権限のみを要求します。</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Google APIデータの開示・共有</h2>
+                <p>本アプリは、法的に義務付けられた場合を除き、Google APIから取得したデータを第三者と共有することはありません。また、開発者を含むいかなる人間も、ユーザーの未加工（Raw）データにアクセスすることはありません。</p>
+            </section>
+
+            <section>
+                <h2>5. Googleユーザーデータに関する追加表明</h2>
+                <p>本アプリによるGoogle APIから受け取った情報の使用および他アプリへの転送は、<a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes" target="_blank">Google APIサービスユーザーデータポリシー</a>（限定的用途要件を含む）に準拠します。</p>
+            </section>
+
+            <section>
+                <h2>6. お問い合わせ</h2>
+                <p>本ポリシーに関するご質問は、GitHubリポジトリのIssueまたは開発者までご連絡ください。</p>
+            </section>
+        </main>
+    </div>
+
     <footer>
-        <p>&copy; 2023 Smart Shift Sync - This project is open source and available under the MIT License.</p>
+        <p>&copy; 2026 Smart Shift Sync - Licensed under the MIT License.</p>
     </footer>
 </body>
 </html>
