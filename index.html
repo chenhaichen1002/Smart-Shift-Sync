@@ -3,155 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Shift Sync</title>
+    <title>Smart Shift Sync | シフト管理をよりスマートに</title>
     <style>
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            line-height: 1.6;
+        body { 
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f9f9f9; 
         }
-        header {
-            background: #0073e6;
-            color: white;
-            padding: 15px 20px;
+        .container { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 40px; 
+            background: white; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        header { 
+            border-bottom: 2px solid #0073e6; 
+            margin-bottom: 30px; 
+            padding-bottom: 10px; 
             text-align: center;
         }
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
+        header h1 { 
+            margin: 0; 
+            color: #0073e6; 
+            font-size: 28px;
         }
-        h1, h2 {
+        h2 { 
+            font-size: 20px; 
+            border-left: 4px solid #0073e6; 
+            padding-left: 12px; 
+            margin-top: 40px; 
             color: #333;
+        }
+        p, li { font-size: 15px; }
+        ul { padding-left: 20px; }
+        
+        /* リンクスタイル */
+        a { color: #0073e6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* 特徴的なボックス */
+        .highlight-box { 
+            background: #e7f3ff; 
+            padding: 20px; 
+            border-radius: 4px; 
             border-left: 5px solid #0073e6;
-            padding-left: 10px;
+            margin: 20px 0;
         }
-        section {
-            margin-bottom: 30px;
+        .highlight-box p { margin: 5px 0; }
+
+        /* アプリリストのカード */
+        .app-list { list-style: none; padding: 0; }
+        .app-list li { 
+            margin-bottom: 20px; 
+            padding: 20px; 
+            background: #ffffff; 
+            border-radius: 6px; 
+            border: 1px solid #eee; 
+            transition: transform 0.2s;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0073e6;
-            color: white;
-            margin-top: 40px;
+        .app-list li:hover { border-color: #0073e6; }
+        .app-list strong { font-size: 17px; color: #0073e6; }
+
+        /* バッジ */
+        .status-badge { 
+            font-size: 12px; 
+            background: #e67e22; 
+            color: white; 
+            padding: 2px 10px; 
+            border-radius: 12px; 
+            margin-left: 8px; 
+            vertical-align: middle; 
+            font-weight: normal;
         }
-        nav {
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 1px solid #eee;
+
+        /* ナビゲーション */
+        nav { 
+            margin-top: 50px; 
+            padding-top: 20px; 
+            border-top: 1px solid #eee; 
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
-        nav a {
-            display: inline-block;
-            margin-right: 15px;
-            margin-bottom: 10px;
-            color: #0073e6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .app-list {
-            list-style: none;
-            padding: 0;
-        }
-        .app-list li {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: 4px;
-            border: 1px solid #eee;
-        }
-        .status-badge {
-            font-size: 0.8em;
-            background: #e67e22;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 3px;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-        .highlight-box {
-            background: #e7f3ff;
-            padding: 15px;
-            border-radius: 4px;
-            border-left: 5px solid #0073e6;
+        nav a { font-weight: bold; font-size: 14px; }
+
+        footer { 
+            text-align: center; 
+            margin-top: 40px; 
+            font-size: 12px; 
+            color: #777; 
+            padding-bottom: 40px; 
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Smart Shift Sync</h1>
-    </header>
-    <main>
-        <section>
-            <h2>アプリの概要</h2>
-            <p>お勤め先のワークポータルから取得した勤務スケジュールを解析し、Googleカレンダーへ自動的に同期するための個人向け支援ツールです。手入力の手間を省き、シフト管理をよりスマートにします。</p>
-        </section>
+    <div class="container">
+        <header>
+            <h1>Smart Shift Sync</h1>
+            <p>ワークポータルとGoogleカレンダーを繋ぐ架け橋</p>
+        </header>
 
-        <section>
-            <h2>対応システム</h2>
-            <div class="highlight-box">
-                <p><strong>大手企業の勤怠管理システム「COMPANY」に対応</strong></p>
-                <p>スマホでシフトを確認する「COMPANY Mobile」からのデータ取得が可能です。</p>
-                <p><small>※大阪の某有名テーマパークなどで採用されているシフトシステムに対応しています。</small></p>
-            </div>
-        </section>
+        <main>
+            <section>
+                <h2>アプリの概要</h2>
+                <p>お勤め先のワークポータルから取得した勤務スケジュールを解析し、Googleカレンダーへ自動的に同期するための個人向け支援ツールです。手入力の手間を省き、シフト管理をよりスマートにします。</p>
+            </section>
 
-        <section>
-            <h2>プロダクトラインナップ</h2>
-            <ul class="app-list">
-                <li>
-                    <strong>Smart-Shift-Sync_GUI (Windows版)</strong><br>
-                    デスクトップで動作するGUIアプリケーションです。PCから一括操作したい方に最適です。<br>
-                    <a href="https://github.com/chenhaichen1002/Smart-Shift-Sync_GUI" target="_blank">GitHubリポジトリを見る</a>
-                </li>
-                <li>
-                    <strong>Shift Sync Online (Web版)</strong><br>
-                    ブラウザから直接利用可能です。インストール不要で、スマホやPCから手軽に同期できます。<br>
-                    <a href="https://smart-shift-syncweb-mmahtfwspadpxywkmsxetf.streamlit.app/" target="_blank">アプリを開く</a>
-                </li>
-            </ul>
-        </section>
+            <section>
+                <h2>対応システム</h2>
+                <div class="highlight-box">
+                    <p><strong>大手企業の勤怠管理システム「COMPANY」に対応</strong></p>
+                    <p>スマホでシフトを確認する「COMPANY Mobile」からのデータ取得が可能です。</p>
+                    <p><small>※大阪の某有名テーマパークなどで採用されているシフトシステムに対応しています。</small></p>
+                </div>
+            </section>
 
-        <section>
-            <h2>主な機能</h2>
-            <ul>
-                <li><strong>カレンダー同期:</strong> 勤務日時や担当業務をGoogleカレンダーに一括登録。</li>
-                <li><strong>給与シミュレーション:</strong> 深夜手当や残業時間、休日割増を考慮した概算計算。</li>
-                <li><strong>オフライン書き出し:</strong> CSVファイル出力により、Excel等での管理も可能。</li>
-            </ul>
-        </section>
+            <section>
+                <h2>プロダクトラインナップ</h2>
+                <ul class="app-list">
+                    <li>
+                        <strong>Smart-Shift-Sync_GUI (Windows版)</strong><br>
+                        <p>デスクトップで動作するGUIアプリケーションです。PCから一括操作したい方に最適です。</p>
+                        <a href="https://github.com/chenhaichen1002/Smart-Shift-Sync_GUI" target="_blank">→ GitHubリポジトリを見る</a>
+                    </li>
+                    <li>
+                        <strong>Shift Sync Online (Web版)</strong><br>
+                        <p>ブラウザから直接利用可能です。インストール不要で、スマホやPCから手軽に同期できます。</p>
+                        <a href="https://smart-shift-syncweb-mmahtfwspadpxywkmsxetf.streamlit.app/" target="_blank">→ アプリを開く</a>
+                    </li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>開発ロードマップ</h2>
-            <ul class="app-list">
-                <li>
-                    <strong>Smart-Shift-change</strong> <span class="status-badge">開発検討中</span><br>
-                    シフト変更時の連絡ミスを防止し、スタッフ間でお互いに確認しやすくするための機能を予定しています。
-                </li>
-            </ul>
-        </section>
+            <section>
+                <h2>主な機能</h2>
+                <ul>
+                    <li><strong>カレンダー同期:</strong> 勤務日時や担当業務をGoogleカレンダーに一括登録。</li>
+                    <li><strong>給与シミュレーション:</strong> 深夜手当や残業時間、休日割増を考慮した概算計算。</li>
+                    <li><strong>オフライン書き出し:</strong> CSVファイル出力により、Excel等での管理も可能。</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>お問い合わせ</h2>
-            <p>開発者：Chen<br>メール：<a href="mailto:admin@gojapancn.com">admin@gojapancn.com</a></p>
-        </section>
+            <section>
+                <h2>開発ロードマップ</h2>
+                <ul class="app-list">
+                    <li>
+                        <strong>Smart-Shift-change</strong> <span class="status-badge">開発検討中</span><br>
+                        <p>シフト変更時の連絡ミスを防止し、スタッフ間でお互いに確認しやすくするための機能を予定しています。</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>お問い合わせ</h2>
+                <p>開発者：Chen<br>メール：<a href="mailto:admin@gojapancn.com">admin@gojapancn.com</a></p>
+            </section>
+        </main>
 
         <nav>
-            <h2>規約・ポリシー</h2>
             <a href="privacy.html">プライバシーポリシー</a>
             <a href="terms.html">利用規約</a>
         </nav>
-    </main>
-    <footer>
-        <p>&copy; 2023 Smart Shift Sync - This project is open source and available under the MIT License.</p>
-    </footer>
+
+        <footer>
+            <p>&copy; 2026 Smart Shift Sync - Licensed under the MIT License.</p>
+        </footer>
+    </div>
 </body>
 </html>
