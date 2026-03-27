@@ -6,15 +6,16 @@
     <title>Smart Shift Sync</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            line-height: 1.6;
         }
         header {
             background: #0073e6;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-align: center;
         }
         main {
@@ -23,6 +24,7 @@
             margin: 20px auto;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         h1, h2 {
             color: #333;
@@ -37,9 +39,7 @@
             padding: 20px;
             background: #0073e6;
             color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            margin-top: 40px;
         }
         nav {
             margin-top: 20px;
@@ -63,17 +63,25 @@
         }
         .app-list li {
             margin-bottom: 15px;
-            padding: 10px;
+            padding: 15px;
             background: #f9f9f9;
             border-radius: 4px;
+            border: 1px solid #eee;
         }
         .status-badge {
             font-size: 0.8em;
             background: #e67e22;
             color: white;
-            padding: 2px 6px;
+            padding: 2px 8px;
             border-radius: 3px;
             margin-left: 10px;
+            vertical-align: middle;
+        }
+        .highlight-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 5px solid #0073e6;
         }
     </style>
 </head>
@@ -84,7 +92,16 @@
     <main>
         <section>
             <h2>アプリの概要</h2>
-            <p>特定のワークポータルから取得した勤務スケジュールを解析し、Googleカレンダーへ自動的に同期するための個人向け支援ツールです。</p>
+            <p>お勤め先のワークポータルから取得した勤務スケジュールを解析し、Googleカレンダーへ自動的に同期するための個人向け支援ツールです。手入力の手間を省き、シフト管理をよりスマートにします。</p>
+        </section>
+
+        <section>
+            <h2>対応システム</h2>
+            <div class="highlight-box">
+                <p><strong>大手企業の勤怠管理システム「COMPANY」に対応</strong></p>
+                <p>スマホでシフトを確認する「COMPANY Mobile」からのデータ取得が可能です。</p>
+                <p><small>※大阪の某有名テーマパークなどで採用されているシフトシステムに対応しています。</small></p>
+            </div>
         </section>
 
         <section>
@@ -92,12 +109,12 @@
             <ul class="app-list">
                 <li>
                     <strong>Smart-Shift-Sync_GUI (Windows版)</strong><br>
-                    デスクトップで動作するGUIアプリケーションです。<br>
+                    デスクトップで動作するGUIアプリケーションです。PCから一括操作したい方に最適です。<br>
                     <a href="https://github.com/chenhaichen1002/Smart-Shift-Sync_GUI" target="_blank">GitHubリポジトリを見る</a>
                 </li>
                 <li>
                     <strong>Shift Sync Online (Web版)</strong><br>
-                    Smart-Shift-Sync_GUIのオンライン版です。ブラウザから直接利用可能です。<br>
+                    ブラウザから直接利用可能です。インストール不要で、スマホやPCから手軽に同期できます。<br>
                     <a href="https://smart-shift-syncweb-mmahtfwspadpxywkmsxetf.streamlit.app/" target="_blank">アプリを開く</a>
                 </li>
             </ul>
@@ -106,9 +123,9 @@
         <section>
             <h2>主な機能</h2>
             <ul>
-                <li>カレンダー同期: 勤務日時や担当業務をGoogleカレンダーに一括登録。</li>
-                <li>給与シミュレーション: 深夜手当や残業時間、休日割増を考慮した概算計算。</li>
-                <li>オフライン書き出し: CSVでのファイル出力に対応。</li>
+                <li><strong>カレンダー同期:</strong> 勤務日時や担当業務をGoogleカレンダーに一括登録。</li>
+                <li><strong>給与シミュレーション:</strong> 深夜手当や残業時間、休日割増を考慮した概算計算。</li>
+                <li><strong>オフライン書き出し:</strong> CSVファイル出力により、Excel等での管理も可能。</li>
             </ul>
         </section>
 
